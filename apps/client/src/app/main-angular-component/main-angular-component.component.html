@@ -1,15 +1,18 @@
-
 <header class="brand-name">
-    <img
-      class="brand-logo"
-      src="../../favicon.ico"
-      alt="logo"
-      aria-hidden="true"
-    />
-  </header>
-  <section class="content">
-    <app-search-bar></app-search-bar>
-  </section>
-  <section class="results">
-      <app-housing-location></app-housing-location>
-  </section>
+  <img
+    class="brand-logo"
+    src="../../favicon.ico"
+    alt="logo"
+    aria-hidden="true"
+  />
+</header>
+<section class="content">
+  <app-search-bar></app-search-bar>
+</section>
+<section class="results">
+  @for(housingLocation of housingLocationList; track housingLocation.id){
+  <app-housing-location
+    [housingLocation]="housingLocation"
+  ></app-housing-location>
+  }
+</section>
